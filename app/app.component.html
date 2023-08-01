@@ -1,0 +1,9 @@
+<button (click)="onAdd()">Add Dropdown</button>
+
+<div *ngFor="let dropdown of dropdowns">
+  <select [(ngModel)]="dropdown.selectedOptions" (ngModelChange)="onSelect($event, dropdown)">
+    <option *ngFor="let option of dropdown.availableOptions" [value]="option">
+      {{ option }}
+    </option>
+  </select>
+</div>
